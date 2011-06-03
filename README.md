@@ -7,6 +7,9 @@ The controller that you create through the SDK will appear on any phones running
 virtual analog sticks, and buttons.  You can also get accelerometer input from each phone.
 To see pictures, go to [getjoypad.com/sdk.html](http://getjoypad.com/sdk.html "Joypad SDK").
 
+Note: Only the latest version of Joypad is SDK enabled, 
+get it for free [here](http://itunes.apple.com/us/app/joypad-game-controller/id411422117?mt=8 "Joypad").
+
 How do I get started?
 ----------
 
