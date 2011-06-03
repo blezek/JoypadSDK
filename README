@@ -1,1 +1,19 @@
-Woohoo, stuff!
+=== Rdoc? 
+
+=== Install
+  
+  BLAH
+
+=== Usage
+
+==== How Awesome
+  
+  [self setAwesomeness:AWESOME_MAX]
+
+==== More Code? 
+
+  yes + please;
+
+===== What does this do?
+
+
