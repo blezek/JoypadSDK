@@ -1,19 +1,24 @@
-=== Rdoc? 
+Markdown? 
+=========
 
-=== Install
+Install
+----------
   
   BLAH
 
-=== Usage
+Usage
+--------
 
-==== How Awesome
+    This is code.
+
+How Awesome
+-----------
   
-  [self setAwesomeness:AWESOME_MAX]
+    [self setAwesomeness:AWESOME_MAX]
 
-==== More Code? 
-
-  yes + please;
-
-===== What does this do?
+* Throw
+* In
+* A 
+* List
 
 
