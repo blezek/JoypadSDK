@@ -10,6 +10,16 @@ To see pictures, go to [getjoypad.com/sdk.html](http://getjoypad.com/sdk.html "J
 Note: Only the latest version of Joypad is SDK enabled, 
 get it for free [here](http://itunes.apple.com/us/app/joypad-game-controller/id411422117?mt=8 "Joypad").
 
+Requirements for building
+----------------------------
+To build a project that includes the JoypadSDK, there are two prerequisites: 
+ 
+1.  Double click on your target, go to the Build tab, and next to "Other Linker Flags" enter:
+ 	-all_load
+2.  If you are building for Cocoa, you need to add the CFNetwork framework.
+
+Regarding 1, you can alternatively enter -force_load with the full path to libJoypadCocoa&lt;Touch&gt;.a as a parameter.
+	
 How do I get started?
 ----------
 
