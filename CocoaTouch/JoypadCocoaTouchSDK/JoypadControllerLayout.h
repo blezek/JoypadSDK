@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#if TARGET_OS_IPHONE
 #import <CoreGraphics/CGGeometry.h>
+#endif
 
 #import "JoypadConstants.h"
 
