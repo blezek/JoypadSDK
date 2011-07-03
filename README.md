@@ -91,14 +91,16 @@ Each type of component that you set down (dpads, buttons, etc) gets its own dele
     -(void)joypadDevice:(JoypadDevice *)device buttonDown:(JoyInputIdentifier)button;
     -(void)joypadDevice:(JoypadDevice *)device analogStick:(JoyInputIdentifier)stick didMove:(JoypadStickPosition)newPosition;
 
-Warning: Connecting over Bluetooth
+Warning: Connecting over Bluetooth (iOS Only)
 ---------------------------------------------------
 The iOS version of the SDK can connect to Joypad over wifi or bluetooth.  You *must* stop searching for devices before starting
 gameplay.  Do this with: 
 
     [joypadManager stopFindingDevices];
     
-Otherwise, you will see major performance issues over bluetooth.
+Otherwise, you will see major performance issues over bluetooth.  For details,
+see [this](https://github.com/lzell/JoypadSDK/wiki/SDK-FAQ "Joypad SDK FAQ").
+
 
 Creating a custom controller!
 -----------------------------
