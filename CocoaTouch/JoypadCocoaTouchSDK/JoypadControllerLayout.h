@@ -54,6 +54,8 @@
 -(void)addAccelerometer;
 -(void)addAnalogStickWithFrame:(CGRect)rect identifier:(JoyInputIdentifier)inputId;
 
+-(BOOL)isEqualToControllerLayout:(JoypadControllerLayout *)otherLayout;
+
 #pragma mark RPC Encoding
 -(NSArray *)propertiesToEncode;
 

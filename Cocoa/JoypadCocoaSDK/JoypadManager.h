@@ -31,7 +31,13 @@
 -(void)startFindingDevices;
 -(void)stopFindingDevices;
 -(void)connectToDevice:(JoypadDevice *)device asPlayer:(unsigned int)player;
+
+// Expects ipAddr to have the format: @"x.x.x.x"
 -(void)connectToDeviceAtIp:(NSString *)ipAddr port:(UInt16)port asPlayer:(unsigned int)player;
+
+// Expects addrStr to have the format: @"x.x.x.x:port"
+-(void)connectToDeviceAtAddress:(NSString *)addrStr asPlayer:(unsigned int)player;
+
 -(void)usePreInstalledLayout:(JoyControllerIdentifier)layoutId;
 -(void)useCustomLayout:(JoypadControllerLayout *)layout;
 
