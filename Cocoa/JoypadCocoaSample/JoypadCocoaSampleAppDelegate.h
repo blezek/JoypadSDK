@@ -8,12 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class JoypadManager;
 
 @interface JoypadCocoaSampleAppDelegate : NSObject
 {
   NSWindow *window;
-  JoypadManager *joypadManager;
 }
 
 @property (assign) IBOutlet NSWindow *window;

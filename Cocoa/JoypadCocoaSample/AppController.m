@@ -1,22 +1,21 @@
 //
-//  JoypadCocoaTouchSampleViewController.m
-//  JoypadCocoaTouchSample
+//  AppController.m
+//  JoypadCocoaSample
 //
-//  Created by Lou Zell on 6/1/11.
+//  Created by Lou Zell on 8/14/11.
 //  Copyright 2011 Hazelmade. All rights reserved.
 //
 
-#import "JoypadCocoaTouchSampleViewController.h"
+#import "AppController.h"
 #import "JoypadSDK.h"
 
-@implementation JoypadCocoaTouchSampleViewController
+@implementation AppController
 
-#pragma mark -
--(void)viewDidLoad
+-(void)awakeFromNib
 {
   joypadManager = [[JoypadManager alloc] init];
   [joypadManager setDelegate:self];
-
+  
   // Create custom layout.
   JoypadControllerLayout *customLayout = [[JoypadControllerLayout alloc] init];
   [customLayout setName:@"SampleApp"];
@@ -28,7 +27,7 @@
                              shape:kJoyButtonShapeSquare
                              color:kJoyButtonColorBlue
                         identifier:kJoyInputBButton];
-
+  
   [customLayout addButtonWithFrame:CGRectMake(380,0,100,320) 
                              label:@"A" 
                           fontSize:36
@@ -38,16 +37,12 @@
   
   [joypadManager useCustomLayout:customLayout];
   [customLayout release];
-  
-  // Start finding devices running Joypad.
-  //[joypadManager startFindingDevices];
-  
-  [super viewDidLoad];
 }
 
 -(void)dealloc
 {
   [joypadManager release];
+  NSLog(@"Here");
   [super dealloc];
 }
 
@@ -59,7 +54,7 @@
 
 -(IBAction)connectManually:(id)sender
 {
-  [joypadManager connectToDeviceAtAddress:[connectionAddressTextField text] asPlayer:1];
+  [joypadManager connectToDeviceAtAddress:[connectionAddressTextField stringValue] asPlayer:1];
 }
 
 #pragma mark JoypadManager Delegate Callbacks
@@ -75,7 +70,6 @@
   NSLog(@"Lost a device");
 }
 
-#pragma mark JoypadDevice Delegate Callbacks
 -(void)joypadManager:(JoypadManager *)manager deviceDidConnect:(JoypadDevice *)device player:(unsigned int)player
 {
   NSLog(@"Device connected as player: %i!", player);
@@ -87,6 +81,7 @@
   NSLog(@"Player %i disconnected.", player);
 }
 
+#pragma mark JoypadDevice Delegate Callbacks
 -(void)joypadDevice:(JoypadDevice *)device buttonDown:(JoyInputIdentifier)button
 {
   switch(button)

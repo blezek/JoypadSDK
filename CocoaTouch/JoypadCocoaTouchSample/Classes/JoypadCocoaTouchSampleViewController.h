@@ -12,8 +12,14 @@
 
 @interface JoypadCocoaTouchSampleViewController : UIViewController
 {
-    JoypadManager *joypadManager;
+  JoypadManager *joypadManager;
+  UITextField *connectionAddressTextField;
 }
+
+-(IBAction)searchForJoypad:(id)sender;
+-(IBAction)connectManually:(id)sender;
+
+@property (nonatomic, retain) IBOutlet UITextField *connectionAddressTextField;
 
 @end
 
