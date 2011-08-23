@@ -37,24 +37,25 @@ typedef enum
   kJoyButtonColorBlack
 }JoyButtonColor;
 
+// Numbers are to assist adding tags to the NIB
 typedef enum
 {
-  kJoyInputDpad1,
-  kJoyInputDpad2,
-  kJoyInputAnalogStick1,
-  kJoyInputAnalogStick2,
-  kJoyInputAccelerometer,
-  kJoyInputWheel,
-  kJoyInputAButton,
-  kJoyInputBButton,
-  kJoyInputCButton,
-  kJoyInputXButton,
-  kJoyInputYButton,
-  kJoyInputZButton,
-  kJoyInputSelectButton,
-  kJoyInputStartButton,
-  kJoyInputLButton,
-  kJoyInputRButton
+  kJoyInputDpad1         = 0,
+  kJoyInputDpad2         = 1,
+  kJoyInputAnalogStick1  = 2,
+  kJoyInputAnalogStick2  = 3,
+  kJoyInputAccelerometer = 4,
+  kJoyInputWheel         = 5,
+  kJoyInputAButton       = 6,
+  kJoyInputBButton       = 7,
+  kJoyInputCButton       = 8,
+  kJoyInputXButton       = 9,
+  kJoyInputYButton       = 10,
+  kJoyInputZButton       = 11,
+  kJoyInputSelectButton  = 12,
+  kJoyInputStartButton   = 13,
+  kJoyInputLButton       = 14,
+  kJoyInputRButton       = 15
 }JoyInputIdentifier;
 
 typedef enum

@@ -8,36 +8,43 @@
 
 #import "JoypadCocoaTouchSampleViewController.h"
 #import "JoypadSDK.h"
+#import "JoypadXIBConfigure.h"
+
+static int counter = 0;
 
 @implementation JoypadCocoaTouchSampleViewController
 
 #pragma mark -
 -(void)viewDidLoad
 {
+  buttonMap = [[NSArray arrayWithObjects:@"kJoyInputDpad1",
+               @"kJoyInputDpad2",
+               @"kJoyInputAnalogStick1",
+               @"kJoyInputAnalogStick2",
+               @"kJoyInputAccelerometer",
+               @"kJoyInputWheel",
+               @"kJoyInputAButton",
+               @"kJoyInputBButton",
+               @"kJoyInputCButton",
+               @"kJoyInputXButton",
+               @"kJoyInputYButton",
+               @"kJoyInputZButton",
+               @"kJoyInputSelectButton",
+               @"kJoyInputStartButton",
+               @"kJoyInputLButton",
+               @"kJoyInputRButton",
+               nil] retain];
   joypadManager = [[JoypadManager alloc] init];
   [joypadManager setDelegate:self];
 
   // Create custom layout.
-  JoypadControllerLayout *customLayout = [[JoypadControllerLayout alloc] init];
-  [customLayout setName:@"SampleApp"];
-  [customLayout addAnalogStickWithFrame:CGRectMake(0, 70, 240, 240) identifier:kJoyInputAnalogStick1];
   
-  [customLayout addButtonWithFrame:CGRectMake(280,0,100,320) 
-                             label:@"B" 
-                          fontSize:36
-                             shape:kJoyButtonShapeSquare
-                             color:kJoyButtonColorBlue
-                        identifier:kJoyInputBButton];
-
-  [customLayout addButtonWithFrame:CGRectMake(380,0,100,320) 
-                             label:@"A" 
-                          fontSize:36
-                             shape:kJoyButtonShapeSquare
-                             color:kJoyButtonColorBlue
-                        identifier:kJoyInputAButton];
+  JoypadXIBConfigure* config = [[JoypadXIBConfigure alloc] init];
   
+  JoypadControllerLayout *customLayout = [config configureLayout:@"DualAnalogSticks"];
   [joypadManager useCustomLayout:customLayout];
   [customLayout release];
+  [config release];
   
   // Start finding devices running Joypad.
   //[joypadManager startFindingDevices];
@@ -89,26 +96,13 @@
 
 -(void)joypadDevice:(JoypadDevice *)device buttonDown:(JoyInputIdentifier)button
 {
-  switch(button)
-  {
-    case kJoyInputAButton:  NSLog(@"A is down");  break;
-    case kJoyInputBButton:  NSLog(@"B is down");  break;
-    default:
-      NSLog(@"Button %i is down", button);
-      break;
-  }
+    NSLog(@"Button %@ is down", [buttonMap objectAtIndex:button]);
 }
 
 -(void)joypadDevice:(JoypadDevice *)device buttonUp:(JoyInputIdentifier)button
 {
-  switch(button)
-  {
-    case kJoyInputAButton:  NSLog(@"A is up");  break;
-    case kJoyInputBButton:  NSLog(@"B is up");  break;
-    default:
-      NSLog(@"Button %i is up", button);
-      break;
-  }
+  NSLog(@"Button %@ is up", [buttonMap objectAtIndex:button]);
+
 }
 
 -(void)joypadDevice:(JoypadDevice *)device analogStick:(JoyInputIdentifier)stick didMove:(JoypadStickPosition)newPosition
@@ -116,8 +110,30 @@
   NSLog(@"Analog stick distance: %f, angle (rad): %f", newPosition.distance, newPosition.angle);
 }
 
+<<<<<<< HEAD:iOS/JoypadCocoaTouchSample/Classes/JoypadCocoaTouchSampleViewController.m
 #pragma mark Accessors
 @synthesize connectionAddressTextField;
+=======
+
+-(void)joypadDevice:(JoypadDevice *)device dPad:(JoyInputIdentifier)dpad buttonUp:(JoyDpadButton)dpadButton
+{
+  NSLog(@"Dpad %@ button %@ is up!", [buttonMap objectAtIndex:dpad], [buttonMap objectAtIndex:dpadButton] );
+}
+
+-(void)joypadDevice:(JoypadDevice *)device dPad:(JoyInputIdentifier)dpad buttonDown:(JoyDpadButton)dpadButton
+{
+  NSLog(@"Dpad %@ button %@ is down!", [buttonMap objectAtIndex:dpad], [buttonMap objectAtIndex:dpadButton] );
+}
+
+-(void)joypadDevice:(JoypadDevice *)device didAccelerate:(JoypadAcceleration)accel {
+  if ( counter > 500 ) {
+    NSLog(@"Accelerometer %f, %f, %f", accel.x, accel.y, accel.z );
+    counter = 0;
+  }
+  counter++;
+}
+
+>>>>>>> Support for configuring a customLayout using an iOS XIB file:CocoaTouch/JoypadCocoaTouchSample/Classes/JoypadCocoaTouchSampleViewController.m
 
 
 @end
