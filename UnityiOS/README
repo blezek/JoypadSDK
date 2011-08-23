@@ -1,0 +1,8 @@
+This Unity demo is built with Unity 3.4 and Xcode4.
+
+If you build with Xcode3 and you get some wacky error like: 
+
+  ld: ldr 12-bit displacement out of range (6072 max +/-4096) in _AudioComponentFindNext$stub in _AudioComponentFindNext$stub 
+
+then change the deployment target to 3.0.
+

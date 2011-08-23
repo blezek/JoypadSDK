@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+
+Project("{AAFBF846-B256-7A06-CDEF-3CE2A5284EF2}") = "JoypadUnityDemo", "Assembly-CSharp.csproj", "{0DE660A3-04EE-935A-17D0-080DD9213C78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DE660A3-04EE-935A-17D0-080DD9213C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE660A3-04EE-935A-17D0-080DD9213C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE660A3-04EE-935A-17D0-080DD9213C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE660A3-04EE-935A-17D0-080DD9213C78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	
+EndGlobal
