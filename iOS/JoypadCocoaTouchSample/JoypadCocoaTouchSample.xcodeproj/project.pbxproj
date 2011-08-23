@@ -223,6 +223,7 @@
 					"\"$(SRCROOT)/../JoypadCocoaTouchSDK\"",
 				);
 				PRODUCT_NAME = JoypadCocoaTouchSample;
+				SDKROOT = iphoneos4.3;
 			};
 			name = Debug;
 		};
@@ -239,6 +240,7 @@
 					"\"$(SRCROOT)/../JoypadCocoaTouchSDK\"",
 				);
 				PRODUCT_NAME = JoypadCocoaTouchSample;
+				SDKROOT = iphoneos4.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -251,9 +253,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos4.3;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -266,10 +269,11 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos4.3;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
