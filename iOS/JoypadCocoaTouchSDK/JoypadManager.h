@@ -57,7 +57,7 @@
 @end
 
 #pragma mark -
-@interface NSObject (JoypadManagerDelegate)
+@protocol JoypadManagerDelegate <NSObject>
 
 -(void)joypadManager:(JoypadManager *)manager didFindDevice:(JoypadDevice *)device previouslyConnected:(BOOL)prev;
 -(void)joypadManager:(JoypadManager *)manager didLoseDevice:(JoypadDevice *)device;

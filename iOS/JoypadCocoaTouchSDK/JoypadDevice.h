@@ -88,7 +88,7 @@ typedef struct
 @end
 
 #pragma mark -
-@interface NSObject (JoypadDeviceDelegate)
+@protocol JoypadDeviceDelegate <NSObject>
 
 -(void)joypadDevice:(JoypadDevice *)device didAccelerate:(JoypadAcceleration)accel;
 -(void)joypadDevice:(JoypadDevice *)device dPad:(JoyInputIdentifier)dpad buttonUp:(JoyDpadButton)dpadButton;

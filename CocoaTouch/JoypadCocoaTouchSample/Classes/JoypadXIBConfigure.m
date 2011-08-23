@@ -21,7 +21,7 @@
   [customLayout setName:nibName];
 
   for ( UIView* item in view.subviews ) {
-    NSLog(@"Found an %@", item );
+    NSLog(@"Found an %@; Tag %d", item, item.tag );
     
     // Start with most specific
     if ( [item class] == [JPAccelerometer class] ) {
@@ -56,15 +56,12 @@
                                  shape:shape
                                  color:color
                             identifier:button.tag];      
-    } else if ( [item isKindOfClass:[UIView class]] ) {
-      if ( item.tag == kJoyInputDpad1 || item.tag == kJoyInputDpad2 ) {
-        [customLayout addDpadWithFrame:item.frame identifier:item.tag];        
-      } else if ( item.tag == kJoyInputAnalogStick1 || item.tag == kJoyInputAnalogStick2 ) {
+    } else if ( [item isKindOfClass:[JPAnalogStick class]] ) {
+      if ( item.tag == kJoyInputAnalogStick1 || item.tag == kJoyInputAnalogStick2 ) {
       [customLayout addAnalogStickWithFrame:item.frame identifier:item.tag];
-      } else {
-        NSLog(@"ERROR: Unknown tag (%d)!", item.tag );
       }
     } else {
+      NSLog(@"ERROR: Unknown tag (%d)!", item.tag );
       NSLog(@"ERROR: Unknown UI element %@", item);
     }
   }
